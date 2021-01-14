@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">IdusProject</string>
+    <string name="app_name">Local Weather</string>
+    <string name="tx_title">Local Weather</string>
 </resources>

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -30,9 +31,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
+    def lifecycle_version = "2.2.0"
+    def koin_version="2.2.2"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
@@ -42,4 +48,46 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
+    // 코어
+    implementation "org.koin:koin-core:$koin_version"
+    // 유닛 테스트
+    testImplementation "org.koin:koin-test:$koin_version"
+    // AndroidX Scope 생성 - 삭제 자동화
+    implementation "org.koin:koin-androidx-scope:$koin_version"
+    // AndroidX ViewModel
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    // AndroidX Fragment
+    // implementation "org.koin:koin-androidx-fragment:$kotlin_version"
+   // implementation "org.koin:koin-android-ext:$koin_version"
+
+
+
+
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+
+    // Annotation processor
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    implementation("io.reactivex.rxjava3:rxkotlin:3.0.1")
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+
 }
