@@ -1,17 +1,32 @@
 package com.example.idusproject.model.remote
 
-import com.example.idusproject.model.remote.entity.SearchWoeidEntity
-import com.example.idusproject.model.remote.entity.SearchWordEntity
-import com.example.idusproject.model.remote.entity.SearchWordEntityMapper
+import com.example.idusproject.model.remote.entity.Location
+import com.example.idusproject.model.remote.entity.WoeidEntity
 import io.reactivex.Single
 
 class RepositoryImpl(val dataSource : LocationRemoteDataSource) :Repository{
-    override fun getSearchWord(param: String): Single<Result<List<SearchWordEntity>>> {
-        return dataSource.searchWord(param).map (SearchWordEntityMapper::map )
+    override fun getSearchWord(param: String): Single<List<Location>> {
+        return dataSource.searchWord(param)
+            .flatMap {
+                if(it.isSuccessful){
+                    Single.just(it.body())
+                }
+                else{
+                    throw  Exception(it.message())
+                }
+            }
     }
 
-    override fun getSearchWoeid(id: Long): Single<Result<SearchWoeidEntity>> {
-        return dataSource.searchWoeid(111).map { null }
+    override fun getSearchWoeid(id: Long): Single<WoeidEntity> {
+        return dataSource.searchWoeid(id)
+                .map {
+                    if(it.isSuccessful){
+                       it.body()
+                    }
+                    else{
+                        throw  Exception(it.message())
+                    }
+                }
     }
 
 }

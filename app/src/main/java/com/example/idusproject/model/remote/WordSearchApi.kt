@@ -1,7 +1,7 @@
 package com.example.idusproject.model.remote
 
-import com.example.idusproject.model.remote.entity.SearchWoeidEntity
-import com.example.idusproject.model.remote.entity.SearchWordEntity
+import com.example.idusproject.model.remote.entity.Location
+import com.example.idusproject.model.remote.entity.WoeidEntity
 import io.reactivex.Single
 import retrofit2.Response
 import retrofit2.http.GET
@@ -13,10 +13,10 @@ interface WordSearchApi {
     @GET("api/location/search/")
     fun searchWordLocationApi(
         @Query("query") param :String)
-            : Single<Response<List<SearchWordEntity>>>
+            : Single<Response<List<Location>>>
 
     @GET("api/location/{woeid}/")
     fun searchwoeidApi(
         @Path("woeid") id : Long
-    ):Single<Response<SearchWoeidEntity>>
+    ):Single<Response<WoeidEntity>>
 }
