@@ -18,7 +18,6 @@
         android:layout_height="@dimen/dp_52"
         android:background="@drawable/bottom_border"
         android:orientation="horizontal"
-        android:weightSum="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,29 +29,29 @@
             style="@style/tx_grid_title"
 
             android:layout_width="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="0.8"
             android:text="@string/tx_local">
 
         </TextView>
 
-        <ImageView style="@style/divider"></ImageView>
+        <ImageView style="@style/divider" />
 
         <TextView
             android:id="@+id/tx_today"
             style="@style/tx_grid_title"
             android:layout_width="match_parent"
-            android:layout_weight="0.3"
+            android:layout_weight="0.5"
             android:text="@string/tx_today">
 
         </TextView>
 
-        <ImageView style="@style/divider"></ImageView>
+        <ImageView style="@style/divider" />
 
         <TextView
             android:id="@+id/tx_day_title"
             style="@style/tx_grid_title"
             android:layout_width="match_parent"
-            android:layout_weight="0.3"
+            android:layout_weight="0.5"
             android:text="@string/tx_tommorow">
 
         </TextView>

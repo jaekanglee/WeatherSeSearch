@@ -25,7 +25,7 @@ object BindingAdapter {
     @BindingAdapter("bind:pullToRefresh")
     fun pullToRefresh(refreshLayout: SwipeRefreshLayout, viewModel: MainViewModel) {
         refreshLayout.setOnRefreshListener {
-            viewModel.getSearchWordApiResult()
+            viewModel.getLocationApi()
             viewModel.setRefreshState(true)
         }
     }

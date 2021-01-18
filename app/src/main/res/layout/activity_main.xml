@@ -59,7 +59,7 @@
                 android:id="@+id/progress_circular"
                 android:layout_width="@dimen/dp_56"
                 android:layout_height="@dimen/dp_56"
-                android:visibility="@{viewmodel._showMainProgressBar}"
+                android:visibility="@{viewmodel._mainProgressBarState}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
