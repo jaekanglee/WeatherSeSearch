@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">Local Weather</string>
+    <string name="app_name"></string>
     <string name="tx_title">Local Weather</string>
+    <string name="tx_local">Local</string>
+    <string name="tx_today">today</string>
+    <string name="tx_tommorow">tommorow</string>
 </resources>
