@@ -1,7 +1,7 @@
 package com.example.idusproject.model.remote
 
 import com.example.idusproject.model.remote.entity.Location
-import com.example.idusproject.model.remote.entity.WoeidEntity
+import com.example.idusproject.model.remote.entity.LocationDetailEntity
 import io.reactivex.Single
 
 class RepositoryImpl(val dataSource : LocationRemoteDataSource) :Repository{
@@ -17,7 +17,7 @@ class RepositoryImpl(val dataSource : LocationRemoteDataSource) :Repository{
             }
     }
 
-    override fun getSearchWoeid(id: Long): Single<WoeidEntity> {
+    override fun getSearchWoeid(id: Long): Single<LocationDetailEntity> {
         return dataSource.searchWoeid(id)
                 .map {
                     if(it.isSuccessful){

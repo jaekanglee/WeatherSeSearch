@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bumptech.glide.RequestManager
-import com.example.idusproject.viewmodel.MainActViewModel
+import com.example.idusproject.viewmodel.MainViewModel
 
 object BindingAdapter {
 
@@ -23,7 +23,7 @@ object BindingAdapter {
 
     @JvmStatic
     @BindingAdapter("bind:pullToRefresh")
-    fun pullToRefresh(refreshLayout: SwipeRefreshLayout, viewModel: MainActViewModel) {
+    fun pullToRefresh(refreshLayout: SwipeRefreshLayout, viewModel: MainViewModel) {
         refreshLayout.setOnRefreshListener {
             viewModel.getSearchWordApiResult()
             viewModel.setRefreshState(true)

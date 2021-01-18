@@ -1,6 +1,6 @@
 package com.example.idusproject.model.remote.entity
 
-data class WoeidEntity(
+data class LocationDetailEntity(
     val consolidated_weather: List<ConsolidatedWeather>,
     //val latt_long: String,
     //val location_type: String,

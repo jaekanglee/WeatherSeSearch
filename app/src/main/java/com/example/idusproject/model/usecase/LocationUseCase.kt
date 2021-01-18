@@ -4,7 +4,7 @@ import com.example.idusproject.model.remote.Repository
 import com.example.idusproject.model.remote.entity.Location
 import io.reactivex.Single
 
-class SearchUseCase(val searchApi: Repository) :
+class LocationUseCase(val searchApi: Repository) :
     SingleUseCase<String, List<Location>>() {
 
 

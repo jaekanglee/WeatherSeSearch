@@ -3,12 +3,11 @@ package com.example.idusproject.view.adapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
 import com.example.idusproject.databinding.ItemContentsLineBinding
-import com.example.idusproject.databinding.ItemTitleLineBinding
-import com.example.idusproject.viewmodel.MainActViewModel
+import com.example.idusproject.viewmodel.MainViewModel
 
 class WeatherContentsHolder(
     val binding : ItemContentsLineBinding,
-    val viewModel: MainActViewModel,
+    val viewModel: MainViewModel,
     val requestManager: RequestManager
 ) :RecyclerView.ViewHolder(binding.root){
 

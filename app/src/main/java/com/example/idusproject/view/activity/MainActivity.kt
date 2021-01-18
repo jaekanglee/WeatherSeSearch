@@ -10,12 +10,12 @@ import com.bumptech.glide.RequestManager
 import com.example.idusproject.R
 import com.example.idusproject.databinding.ActivityMainBinding
 import com.example.idusproject.view.adapter.WeatherAdapter
-import com.example.idusproject.viewmodel.MainActViewModel
+import com.example.idusproject.viewmodel.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private val viewmodel: MainActViewModel by viewModel()
+    private val viewmodel: MainViewModel by viewModel()
     private val adapter: WeatherAdapter by lazy {
         WeatherAdapter(
             requestManager,

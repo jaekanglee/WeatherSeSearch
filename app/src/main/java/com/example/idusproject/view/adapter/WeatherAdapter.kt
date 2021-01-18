@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
 import com.example.idusproject.databinding.ItemContentsLineBinding
 import com.example.idusproject.databinding.ItemTitleLineBinding
-import com.example.idusproject.viewmodel.MainActViewModel
+import com.example.idusproject.viewmodel.MainViewModel
 
-class WeatherAdapter(val requestManager: RequestManager, val viewmodel: MainActViewModel) :
+class WeatherAdapter(val requestManager: RequestManager, val viewmodel: MainViewModel) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         Log.d("ViewType", "${viewType}")
