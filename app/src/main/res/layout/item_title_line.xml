@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.idusproject.viewmodel.MainActViewModel" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_52"
+        android:background="@drawable/bottom_border"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0">
+
+        <TextView
+            android:id="@+id/tx_local"
+            style="@style/tx_grid_title"
+
+            android:layout_width="match_parent"
+            android:layout_weight="0.4"
+            android:text="@string/tx_local">
+
+        </TextView>
+
+        <ImageView style="@style/divider"></ImageView>
+
+        <TextView
+            android:id="@+id/tx_today"
+            style="@style/tx_grid_title"
+            android:layout_width="match_parent"
+            android:layout_weight="0.3"
+            android:text="@string/tx_today">
+
+        </TextView>
+
+        <ImageView style="@style/divider"></ImageView>
+
+        <TextView
+            android:id="@+id/tx_day_title"
+            style="@style/tx_grid_title"
+            android:layout_width="match_parent"
+            android:layout_weight="0.3"
+            android:text="@string/tx_tommorow">
+
+        </TextView>
+    </LinearLayout>
+</layout>
