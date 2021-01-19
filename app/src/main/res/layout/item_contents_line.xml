@@ -49,10 +49,7 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="@dimen/dp_4"
-                android:layout_marginBottom="@dimen/dp_4"
+                style="@style/img_weather_icon"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -65,9 +62,7 @@
 
             <TextView
                 android:id="@+id/tx_today_state_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp_4"
+                style="@style/tx_weather_state"
                 android:text="@{viewmodel.getTodayWeatherState(pos)}"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -78,34 +73,32 @@
             <!--
             -->
 
-            <TextView
-                android:id="@+id/tx_today_temp"
-                style="@style/tx_temp"
-                android:text="@{viewmodel.getTodayWeatherTemp(pos)}"
-
-                app:layout_constraintBottom_toBottomOf="@id/imageView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tx_today_state_name"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/tx_today_state_name"
                 app:layout_constraintTop_toBottomOf="@+id/tx_today_state_name"
-                app:layout_constraintVertical_bias="0" />
+                app:layout_constraintVertical_bias="0">
 
-            <TextView
-                android:id="@+id/tx_today_humidity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp_4"
-                android:text="@{viewmodel.getTodayHumidity(pos)}"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/imageView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
-                app:layout_constraintStart_toEndOf="@+id/tx_today_temp"
-                app:layout_constraintTop_toBottomOf="@+id/tx_today_state_name"
-                app:layout_constraintVertical_bias="0" />
+                <TextView
+                    android:id="@+id/tx_today_temp"
+                    style="@style/tx_temp"
+                    android:text="@{viewmodel.getTodayWeatherTemp(pos)}" />
+
+                <TextView
+                    android:id="@+id/tx_today_humidity"
+                    style="@style/tx_humidity"
+                    android:text="@{viewmodel.getTodayHumidity(pos)}" />
+            </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ImageView style="@style/divider"></ImageView>
+        <ImageView style="@style/divider" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -113,12 +106,10 @@
             android:layout_weight="0.5"
             android:padding="@dimen/dp_12">
 
+
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="@dimen/dp_4"
-                android:layout_marginBottom="@dimen/dp_4"
+                style="@style/img_weather_icon"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -131,9 +122,7 @@
 
             <TextView
                 android:id="@+id/tx_tomorrow_state_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp_4"
+                style="@style/tx_weather_state"
                 android:text="@{viewmodel.getTommorowWeatherState(pos)}"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView2"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -142,30 +131,28 @@
                 app:layout_constraintTop_toTopOf="@+id/imageView2"
                 app:layout_constraintVertical_bias="0" />
 
-            <TextView
-                android:id="@+id/tx_tomorrow_temp"
-                style="@style/tx_temp"
-                android:text="@{viewmodel.getTommorowWeatherTemp(pos)}"
-                app:layout_constraintBottom_toBottomOf="@id/imageView2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
-                app:layout_constraintStart_toStartOf="@id/tx_tomorrow_state_name"
-                app:layout_constraintTop_toBottomOf="@+id/tx_tomorrow_state_name"
-                app:layout_constraintVertical_bias="0" />
-
-            <TextView
-                android:id="@+id/tx_tomorrow_humidity"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp_4"
-                android:text="@{viewmodel.getTommorowHumidity(pos)}"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/imageView2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
-                app:layout_constraintStart_toEndOf="@+id/tx_tomorrow_temp"
-                app:layout_constraintTop_toTopOf="@+id/tx_tomorrow_temp"
-                app:layout_constraintVertical_bias="0" />
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tx_tomorrow_state_name"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tx_tomorrow_state_name"
+                app:layout_constraintTop_toBottomOf="@+id/tx_tomorrow_state_name"
+                app:layout_constraintVertical_bias="0">
+
+                <TextView
+                    android:id="@+id/tx_tomorrow_temp"
+                    style="@style/tx_temp"
+                    android:text="@{viewmodel.getTommorowWeatherTemp(pos)}" />
+
+                <TextView
+                    android:id="@+id/tx_tomorrow_humidity"
+                    style="@style/tx_humidity"
+                    android:text="@{viewmodel.getTommorowHumidity(pos)}" />
+            </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 </layout>

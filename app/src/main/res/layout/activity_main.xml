@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         bind:pullToRefresh="@{viewmodel}"
-        bind:refreshIconVisible="@{viewmodel._refreshState}">
+        bind:refreshIconVisible="@{viewmodel.refreshState}">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -59,7 +59,7 @@
                 android:id="@+id/progress_circular"
                 android:layout_width="@dimen/dp_56"
                 android:layout_height="@dimen/dp_56"
-                android:visibility="@{viewmodel._mainProgressBarState}"
+                android:visibility="@{viewmodel.mainProgressBarState}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"

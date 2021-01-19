@@ -21,15 +21,15 @@ class MainViewModel(
 
     val lAdapterNotify = SingleLiveEvent<Boolean>()
 
-    private val mainProgressBarState = MutableLiveData<Int>().apply {
+    private val _mainProgressBarState = MutableLiveData<Int>().apply {
         this.value = View.VISIBLE
     }
-    val _mainProgressBarState: LiveData<Int>
-        get() = mainProgressBarState
+    val mainProgressBarState: LiveData<Int>
+        get() = _mainProgressBarState
 
-    private val refreshState = MutableLiveData<Boolean>()
-    val _refreshState: LiveData<Boolean>
-        get() = refreshState
+    private val _refreshState = MutableLiveData<Boolean>()
+    val refreshState: LiveData<Boolean>
+        get() = _refreshState
 
     private val viewWeatherList: ArrayList<RecyclerViewItemEntity> by lazy {
         ArrayList<RecyclerViewItemEntity>()
@@ -37,9 +37,9 @@ class MainViewModel(
 
     fun setMainProgressStatus(state: Boolean) {
         if (state) {
-            mainProgressBarState.value = View.VISIBLE
+            _mainProgressBarState.value = View.VISIBLE
         } else {
-            mainProgressBarState.value = View.GONE
+            _mainProgressBarState.value = View.GONE
         }
     }
 
@@ -143,6 +143,6 @@ class MainViewModel(
     }
 
     fun setRefreshState(state: Boolean) {
-        refreshState.value = state
+        _refreshState.value = state
     }
 }

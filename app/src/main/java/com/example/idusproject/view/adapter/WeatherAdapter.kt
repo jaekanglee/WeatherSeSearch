@@ -53,14 +53,14 @@ class WeatherAdapter(val requestManager: RequestManager, val viewmodel: MainView
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is WeatherTitleHolder) {
-            holder.bind(position)
-        } else if (holder is WeatherContentsHolder) {
-            holder.bind(position)
-        } else {
-
+        when(holder){
+            is WeatherTitleHolder ->{
+                holder.bind(position)
+            }
+            is WeatherContentsHolder -> {
+                holder.bind(position)
+            }
         }
+
     }
-
-
 }

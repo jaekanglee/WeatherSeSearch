@@ -10,23 +10,21 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
 abstract class BaseLifeCyclerViewModel : ViewModel() {
-
     private val disposable = CompositeDisposable()
-    private val error = SingleLiveEvent<String>()
-    val _error: LiveData<String>
-        get() = error
+    private val _error = SingleLiveEvent<String>()
+    val error: LiveData<String>
+        get() = _error
 
     operator fun invoke(disposable: Disposable) {
         this.disposable.add(disposable)
     }
 
-
-
-    fun setErrorMsg(msg:String?){
+    fun setErrorMsg(msg: String?) {
         msg?.let {
-            error.value=it
+            _error.value = it
         }
     }
+
 
     override fun onCleared() {
         disposable.clear()
